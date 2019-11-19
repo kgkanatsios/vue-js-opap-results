@@ -8,7 +8,7 @@ Vue.use(BootstrapVue);
 import "./custom.scss";
 
 import axios from "axios";
-axios.defaults.baseURL = "";
+axios.defaults.baseURL = "https://api.opap.gr/draws/v3.0";
 
 Vue.config.productionTip = false;
 
