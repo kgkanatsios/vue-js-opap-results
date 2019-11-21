@@ -14,6 +14,7 @@ const state = {
             winners: null,
             distributed: null,
             jackpot: null,
+            totalEarnings: null,
             fixed: null
         },
         2: {
@@ -22,6 +23,7 @@ const state = {
             winners: null,
             distributed: null,
             jackpot: null,
+            totalEarnings: null,
             fixed: null
         },
         3: {
@@ -30,6 +32,52 @@ const state = {
             winners: null,
             distributed: null,
             jackpot: null,
+            totalEarnings: null,
+            fixed: null
+        },
+        4: {
+            type: "4",
+            divident: null,
+            winners: null,
+            distributed: null,
+            jackpot: null,
+            totalEarnings: null,
+            fixed: null
+        },
+        5: {
+            type: "3+1",
+            divident: null,
+            winners: null,
+            distributed: null,
+            jackpot: null,
+            totalEarnings: null,
+            fixed: null
+        },
+        6: {
+            type: "3",
+            divident: null,
+            winners: null,
+            distributed: null,
+            jackpot: null,
+            totalEarnings: null,
+            fixed: null
+        },
+        7: {
+            type: "2+1",
+            divident: null,
+            winners: null,
+            distributed: null,
+            jackpot: null,
+            totalEarnings: null,
+            fixed: null
+        },
+        8: {
+            type: "1+1",
+            divident: null,
+            winners: null,
+            distributed: null,
+            jackpot: null,
+            totalEarnings: null,
             fixed: null
         }
     }
@@ -42,7 +90,19 @@ const mutations = {
         state.drawId = drawId;
         state.drawTime = drawTime;
     },
-    SET_JOKER_WINNERS() {}
+    SET_JOKER_WINNERS(state, prizeCategories) {
+        prizeCategories.forEach(prizeCategory => {
+            state.categories[prizeCategory.id].divident =
+                prizeCategory.divident;
+            state.categories[prizeCategory.id].winners = prizeCategory.winners;
+            state.categories[prizeCategory.id].distributed =
+                prizeCategory.distributed;
+            state.categories[prizeCategory.id].jackpot = prizeCategory.jackpot;
+            state.categories[prizeCategory.id].totalEarnings =
+                prizeCategory.distributed + prizeCategory.jackpot;
+            state.categories[prizeCategory.id].fixed = prizeCategory.fixed;
+        });
+    }
 };
 
 const actions = {
@@ -58,10 +118,10 @@ const actions = {
             })
             .catch(error => console.log(error));
     },
-    fetchJokerWinners: () => {
+    fetchJokerWinners: ({ commit }) => {
         Axios.get("/5104/last-result-and-active")
             .then(res => {
-                console.log(res.data.last.prizeCategories);
+                commit("SET_JOKER_WINNERS", res.data.last.prizeCategories);
             })
             .catch(error => console.log(error));
     }
