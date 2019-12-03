@@ -2,10 +2,12 @@
 	<div id="app">
 		<div id="nav">
 			<router-link to="/">Home</router-link>|
-			<router-link to="/about">About</router-link>|
-			<router-link to="/joker">Joker</router-link>|
-			<router-link to="/lotto">Lotto</router-link>|
-			<router-link to="/proto">Proto</router-link>|
+			<router-link to="/about">About</router-link> |
+			<router-link to="/joker">Joker</router-link> |
+			<router-link to="/lotto">Lotto</router-link> |
+			<router-link to="/proto">Proto</router-link> |
+			<router-link to="/extra5">Extra 5</router-link> |
+			<router-link to="/super3">Super 3</router-link>
 		</div>
 		<router-view />
 	</div>
