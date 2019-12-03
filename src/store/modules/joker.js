@@ -137,7 +137,8 @@ const getters = {
         return {
             numbers: state.resultNumbers.numbers,
             joker: state.resultNumbers.joker,
-            drawId: state.drawId
+            drawId: state.drawId,
+            nextDrawTime: state.nextDrawTime
         };
     },
     jokerWinners: state => {
