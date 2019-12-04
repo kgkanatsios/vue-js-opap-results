@@ -5,9 +5,8 @@ import Template1 from "../views/Template1.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-    {
-        path: "/",
+const routes = [{
+        path: "",
         name: "home",
         component: Home
     },
@@ -19,11 +18,7 @@ const routes = [
     {
         path: "/about",
         name: "about",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import(/* webpackChunkName: "about" */ "../views/About.vue")
+        component: () => import("../views/About.vue")
     },
     {
         path: "/joker",
@@ -49,6 +44,10 @@ const routes = [
         path: "/super3",
         name: "super3",
         component: () => import("../views/Super3.vue")
+    },
+    {
+        path: '*',
+        redirect: '/'
     }
 ];
 

@@ -1,38 +1,63 @@
 <template>
-	<div id="app">
-		<div id="nav">
-			<router-link to="/">Home</router-link>|
-			<router-link to="/template1">Template 1</router-link>|
-			<router-link to="/about">About</router-link> |
-			<router-link to="/joker">Joker</router-link> |
-			<router-link to="/lotto">Lotto</router-link> |
-			<router-link to="/proto">Proto</router-link> |
-			<router-link to="/extra5">Extra 5</router-link> |
-			<router-link to="/super3">Super 3</router-link>
-		</div>
-		<router-view />
-	</div>
+  <div id="app">
+    <b-navbar>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="mx-auto">
+          <router-link to="/" v-slot="{ href, navigate, isActive }" exact>
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Home</b-nav-item>
+          </router-link>
+          <b-nav-item-dropdown text="Templates">
+            <router-link to="/template1" v-slot="{ href, navigate, isActive }">
+              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 1 {{ params }}</b-nav-item>
+            </router-link>
+          </b-nav-item-dropdown>
+          <router-link to="/joker" v-slot="{ href, navigate, isActive }">
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Joker</b-nav-item>
+          </router-link>
+          <router-link to="/lotto" v-slot="{ href, navigate, isActive }">
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Lotto</b-nav-item>
+          </router-link>
+          <router-link to="/proto" v-slot="{ href, navigate, isActive }">
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Proto</b-nav-item>
+          </router-link>
+          <router-link to="/extra5" v-slot="{ href, navigate, isActive }">
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Extra 5</b-nav-item>
+          </router-link>
+          <router-link to="/super3" v-slot="{ href, navigate, isActive }">
+            <b-nav-item :active="isActive" :href="href" @click="navigate">Super 3</b-nav-item>
+          </router-link>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+    <router-view />
+  </div>
 </template>
 
 <style lang="scss">
 #app {
-	font-family: "Avenir", Helvetica, Arial, sans-serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	text-align: center;
-	color: #2c3e50;
+  font-family: "Didact Gothic", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #1d427c;
 }
-
-#nav {
-	padding: 30px;
-
-	a {
-		font-weight: bold;
-		color: #2c3e50;
-
-		&.router-link-exact-active {
-			color: #42b983;
-		}
-	}
+.navbar {
+  border-bottom: 2px solid #1d427c;
+  margin-bottom: 20px;
+  ul.navbar-nav {
+    li.nav-item {
+      margin: 0px 2px;
+      a.nav-link {
+        color: #1d427c;
+        border-radius: 4px;
+        &:hover,
+        &.active {
+          background: #1d427c;
+          color: #ffffff;
+        }
+      }
+    }
+  }
 }
 </style>

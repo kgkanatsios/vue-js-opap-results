@@ -1,11 +1,25 @@
 <template>
-  <div>
-    <joker-basic-view></joker-basic-view>
-    <lotto-basic-view></lotto-basic-view>
-    <proto-basic-view></proto-basic-view>
-    <extra5-basic-view></extra5-basic-view>
-    <super3-basic-view></super3-basic-view>
-  </div>
+  <b-container fluid>
+    <b-row>
+      <b-col>
+        <joker-basic-view></joker-basic-view>
+      </b-col>
+      <b-col>
+        <lotto-basic-view></lotto-basic-view>
+      </b-col>
+    </b-row>
+    <b-row>
+      <b-col>
+        <proto-basic-view></proto-basic-view>
+      </b-col>
+      <b-col>
+        <extra5-basic-view></extra5-basic-view>
+      </b-col>
+      <b-col>
+        <super3-basic-view></super3-basic-view>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 
 <script>
