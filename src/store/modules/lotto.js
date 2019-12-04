@@ -59,8 +59,13 @@ const state = {
 
 const mutations = {
     SET_LOTTO_RESULTS(
-        state,
-        { numbers, lotto, drawId, drawTime, nextDrawTime }
+        state, {
+            numbers,
+            lotto,
+            drawId,
+            drawTime,
+            nextDrawTime
+        }
     ) {
         state.resultNumbers.numbers = numbers;
         state.resultNumbers.lotto = lotto;
@@ -84,7 +89,9 @@ const mutations = {
 };
 
 const actions = {
-    fetchLottoResultNumbers: ({ commit }) => {
+    fetchLottoResultNumbers: ({
+        commit
+    }) => {
         Axios.get("/5103/last-result-and-active")
             .then(res => {
                 commit("SET_LOTTO_RESULTS", {
@@ -97,7 +104,9 @@ const actions = {
             })
             .catch(error => console.log(error));
     },
-    fetchLottoWinners: ({ commit }) => {
+    fetchLottoWinners: ({
+        commit
+    }) => {
         Axios.get("/5103/last-result-and-active")
             .then(res => {
                 commit("SET_LOTTO_WINNERS", res.data.last.prizeCategories);
@@ -110,7 +119,8 @@ const getters = {
         return {
             numbers: state.resultNumbers.numbers,
             lotto: state.resultNumbers.lotto,
-            drawId: state.drawId
+            drawId: state.drawId,
+            nextDrawTime: state.nextDrawTime
         };
     },
     lottoWinners: state => {

@@ -76,7 +76,12 @@ const state = {
 };
 
 const mutations = {
-    SET_PROTO_RESULTS(state, { numbers, drawId, drawTime, nextDrawTime }) {
+    SET_PROTO_RESULTS(state, {
+        numbers,
+        drawId,
+        drawTime,
+        nextDrawTime
+    }) {
         state.resultNumbers = numbers;
         state.drawId = drawId;
         state.drawTime = drawTime;
@@ -101,7 +106,7 @@ const mutations = {
                 state.resultNumbers.slice(
                     Math.max(
                         state.resultNumbers.length -
-                            state.categories[prizeCategory.id].offset
+                        state.categories[prizeCategory.id].offset
                     )
                 )
             ];
@@ -110,7 +115,9 @@ const mutations = {
 };
 
 const actions = {
-    fetchProtoResultNumbers: ({ commit }) => {
+    fetchProtoResultNumbers: ({
+        commit
+    }) => {
         Axios.get("/2101/last-result-and-active")
             .then(res => {
                 commit("SET_PROTO_RESULTS", {
@@ -122,7 +129,9 @@ const actions = {
             })
             .catch(error => console.log(error));
     },
-    fetchProtoWinners: ({ commit }) => {
+    fetchProtoWinners: ({
+        commit
+    }) => {
         Axios.get("/2101/last-result-and-active")
             .then(res => {
                 commit("SET_PROTO_WINNERS", res.data.last.prizeCategories);
@@ -134,7 +143,8 @@ const getters = {
     protoWinningNumbers: state => {
         return {
             numbers: state.resultNumbers,
-            drawId: state.drawId
+            drawId: state.drawId,
+            nextDrawTime: state.nextDrawTime
         };
     },
     protoWinners: state => {

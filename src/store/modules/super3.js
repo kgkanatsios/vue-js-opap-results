@@ -55,7 +55,12 @@ const state = {
 };
 
 const mutations = {
-    SET_SUPER3_RESULTS(state, { numbers, drawId, drawTime, nextDrawTime }) {
+    SET_SUPER3_RESULTS(state, {
+        numbers,
+        drawId,
+        drawTime,
+        nextDrawTime
+    }) {
         state.resultNumbers = numbers;
         state.drawId = drawId;
         state.drawTime = drawTime;
@@ -77,7 +82,9 @@ const mutations = {
 };
 
 const actions = {
-    fetchSuper3ResultNumbers: ({ commit }) => {
+    fetchSuper3ResultNumbers: ({
+        commit
+    }) => {
         Axios.get("/2100/last-result-and-active")
             .then(res => {
                 commit("SET_SUPER3_RESULTS", {
@@ -89,7 +96,9 @@ const actions = {
             })
             .catch(error => console.log(error));
     },
-    fetchSuper3Winners: ({ commit }) => {
+    fetchSuper3Winners: ({
+        commit
+    }) => {
         Axios.get("/2100/last-result-and-active")
             .then(res => {
                 commit("SET_SUPER3_WINNERS", res.data.last.prizeCategories);
@@ -102,7 +111,8 @@ const getters = {
     super3WinningNumbers: state => {
         return {
             numbers: state.resultNumbers,
-            drawId: state.drawId
+            drawId: state.drawId,
+            nextDrawTime: state.nextDrawTime
         };
     },
     super3Winners: state => {

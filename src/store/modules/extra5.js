@@ -37,7 +37,12 @@ const state = {
 };
 
 const mutations = {
-    SET_EXTRA5_RESULTS(state, { numbers, drawId, drawTime, nextDrawTime }) {
+    SET_EXTRA5_RESULTS(state, {
+        numbers,
+        drawId,
+        drawTime,
+        nextDrawTime
+    }) {
         state.resultNumbers = numbers;
         state.drawId = drawId;
         state.drawTime = drawTime;
@@ -59,7 +64,9 @@ const mutations = {
 };
 
 const actions = {
-    fetchExtra5ResultNumbers: ({ commit }) => {
+    fetchExtra5ResultNumbers: ({
+        commit
+    }) => {
         Axios.get("/5106/last-result-and-active")
             .then(res => {
                 commit("SET_EXTRA5_RESULTS", {
@@ -71,7 +78,9 @@ const actions = {
             })
             .catch(error => console.log(error));
     },
-    fetchExtra5Winners: ({ commit }) => {
+    fetchExtra5Winners: ({
+        commit
+    }) => {
         Axios.get("/5106/last-result-and-active")
             .then(res => {
                 commit("SET_EXTRA5_WINNERS", res.data.last.prizeCategories);
@@ -84,7 +93,8 @@ const getters = {
     extra5WinningNumbers: state => {
         return {
             numbers: state.resultNumbers,
-            drawId: state.drawId
+            drawId: state.drawId,
+            nextDrawTime: state.nextDrawTime
         };
     },
     extra5Winners: state => {
