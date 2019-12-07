@@ -42,7 +42,7 @@ section {
   }
   .drawNumbers {
     span {
-      background: #1d427c;
+      background: #104c8c;
       color: #ffffff;
     }
   }
