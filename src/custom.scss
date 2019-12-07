@@ -1,2 +1,76 @@
 @import "node_modules/bootstrap/scss/bootstrap";
 @import "node_modules/bootstrap-vue/src/index.scss";
+
+#app {
+    font-family: "Didact Gothic", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #1d427c;
+}
+
+.row {
+    margin-bottom: 15px;
+}
+
+section {
+    background: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid #c5c8d0;
+
+    h1 {
+        color: #ffffff;
+        background: #426fad;
+        font-size: 40px;
+        padding: 8px;
+    }
+
+    .drawDetails {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .drawNumbers {
+        span {
+            display: inline-block;
+            background: #426fad;
+            color: #ffffff;
+            padding: 4px;
+            margin: 0px 3px;
+            font-weight: bold;
+            font-size: 22px;
+            border-radius: 50%;
+            width: 41px;
+            text-align: center;
+        }
+    }
+
+    .nextDrawTime {
+        margin-top: 10px;
+        font-size: 18px;
+
+        span {
+            font-weight: bold;
+        }
+    }
+
+    .table {
+        margin-top: 10px;
+        color: #1d427c;
+
+        tr {
+            font-weight: bold;
+
+            td {
+                vertical-align: middle;
+                text-align: center;
+            }
+        }
+    }
+
+    h2 {
+        font-size: 26px;
+        font-weight: bold;
+    }
+}

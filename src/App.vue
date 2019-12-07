@@ -40,14 +40,7 @@
   </div>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: "Didact Gothic", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #1d427c;
-}
+<style lang="scss" scoped>
 .navbar {
   border-bottom: 2px solid #1d427c;
   margin-bottom: 20px;
