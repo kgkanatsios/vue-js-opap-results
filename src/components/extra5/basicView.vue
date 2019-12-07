@@ -1,16 +1,19 @@
 <template>
-  <div>
-    <h1>Extra5 Basic view</h1>
-    <div>
-      Numbers:
-      <span
-        v-for="(number, index) in extra5WinningNumbers.numbers"
-        :key="index"
-      >{{ number }} -</span>
+  <section>
+    <h1>Extra 5</h1>
+    <div class="drawDetails">
+      ΚΛΗΡΩΣΗ
+      <span>{{ extra5WinningNumbers.drawId }}</span>
     </div>
-    <div>drawId: {{ extra5WinningNumbers.drawId }}</div>
-    <div>nextDrawTime: {{ extra5WinningNumbers.nextDrawTime | date }}</div>
-  </div>
+    <div class="drawNumbers">
+      <h2>ΝΙΚΗΤΡΙΑ ΣΤΗΛΗ</h2>
+      <span v-for="(number, index) in extra5WinningNumbers.numbers" :key="index">{{ number }}</span>
+    </div>
+    <div class="nextDrawTime">
+      Επόμενη κλήρωση:
+      <span>{{ extra5WinningNumbers.nextDrawTime | date }}</span>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -31,5 +34,17 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+section {
+  h1 {
+    color: #ffffff;
+    background: #a8226f;
+  }
+  .drawNumbers {
+    span {
+      background: #a8226f;
+      color: #ffffff;
+    }
+  }
+}
 </style>
