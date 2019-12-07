@@ -9,7 +9,13 @@
           </router-link>
           <b-nav-item-dropdown text="Templates">
             <router-link to="/template1" v-slot="{ href, navigate, isActive }">
-              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 1 {{ params }}</b-nav-item>
+              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 1</b-nav-item>
+            </router-link>
+            <router-link to="/template2" v-slot="{ href, navigate, isActive }">
+              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 2</b-nav-item>
+            </router-link>
+            <router-link to="/template3" v-slot="{ href, navigate, isActive }">
+              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 3</b-nav-item>
             </router-link>
           </b-nav-item-dropdown>
           <router-link to="/joker" v-slot="{ href, navigate, isActive }">
