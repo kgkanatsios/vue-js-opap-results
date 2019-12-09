@@ -8,9 +8,6 @@
             <b-nav-item :active="isActive" :href="href" @click="navigate">Home</b-nav-item>
           </router-link>
           <b-nav-item-dropdown text="Templates">
-            <router-link to="/template1" v-slot="{ href, navigate, isActive }">
-              <b-nav-item :active="isActive" :href="href" @click="navigate">Template 1</b-nav-item>
-            </router-link>
             <router-link to="/template2" v-slot="{ href, navigate, isActive }">
               <b-nav-item :active="isActive" :href="href" @click="navigate">Template 2</b-nav-item>
             </router-link>
@@ -40,23 +37,5 @@
   </div>
 </template>
 
-<style lang="scss" scoped>
-.navbar {
-  border-bottom: 2px solid #1d427c;
-  margin-bottom: 20px;
-  ul.navbar-nav {
-    li.nav-item {
-      margin: 0px 2px;
-      a.nav-link {
-        color: #1d427c;
-        border-radius: 4px;
-        &:hover,
-        &.active {
-          background: #1d427c;
-          color: #ffffff;
-        }
-      }
-    }
-  }
-}
+<style>
 </style>

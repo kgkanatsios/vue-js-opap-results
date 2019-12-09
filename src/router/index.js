@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+
 import Template1 from "../views/Template1.vue";
 import Template2 from "../views/Template2.vue";
 import Template3 from "../views/Template3.vue";
@@ -8,12 +8,7 @@ import Template3 from "../views/Template3.vue";
 Vue.use(VueRouter);
 
 const routes = [{
-        path: "",
-        name: "home",
-        component: Home
-    },
-    {
-        path: "/template1",
+        path: "/",
         name: "template1",
         component: Template1
     },
@@ -26,11 +21,6 @@ const routes = [{
         path: "/template3",
         name: "template3",
         component: Template3
-    },
-    {
-        path: "/about",
-        name: "about",
-        component: () => import("../views/About.vue")
     },
     {
         path: "/joker",
