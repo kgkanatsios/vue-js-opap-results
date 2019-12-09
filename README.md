@@ -1,24 +1,3 @@
 # vue-js-opap-results
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Single-Page Application using Vue.js, Vuex &amp; Vue Router for accessing the [OPAP REST web services](https://www.opap.gr/en/web-services).
