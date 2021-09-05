@@ -13,6 +13,11 @@ const routes = [{
         component: Template1
     },
     {
+        path: "/template1",
+        name: "template1",
+        component: Template1
+    },
+    {
         path: "/template2",
         name: "template2",
         component: Template2
